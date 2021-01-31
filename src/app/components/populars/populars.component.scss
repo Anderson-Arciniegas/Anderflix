@@ -1,0 +1,56 @@
+$back: #333232;
+$main: #1e272e;
+$gris: #a5b1c2;
+.carousel{
+    margin: 0;
+    padding:2%;
+    h2{
+        color: salmon;
+        font-size: 35px;
+    }
+    background: $back;
+    .contentCarousel{
+        user-select: none;
+        width: 100%;
+        margin-top: 10px;
+        svg{
+
+            path{
+                
+                transition: 400ms;
+                cursor: pointer;
+             
+
+            }
+
+           
+        }
+    }
+    .content{
+        width: 90%;
+        display: flex;
+        align-items: center;
+        .image{
+            width: 60%;
+            margin-left: 20%;
+            border-radius: 5%;
+            cursor: pointer;
+            max-width: 350px;
+            &:focus{
+                outline: none;
+            }
+            
+        }
+        .serieImage{
+            width: 60%;
+            margin-left: 20%;
+            border-radius: 5%;
+            max-width: 350px;
+
+        }
+
+        .hide{
+            display: none;
+        }
+    }
+}

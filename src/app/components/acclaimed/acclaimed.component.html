@@ -1,0 +1,8 @@
+<div class="acclaimed">
+        <h2 [ngStyle.xs]="{'font-size.px': 24}">Las películas mas aclamadas</h2>
+    <div fxLayout="row" fxLayoutAlign="center center">
+        <div  gdColumns="1fr 1fr 1fr 1fr" gdRows="360px" gdColumns.xs="120px 120px" gdRows.lg="550px"  gdRows.xs="200px 200px"  class="content">
+            <img class="images" [ngStyle.xs]="{'width.%': 90, 'margin-left.%': 5}"  *ngFor="let movie of movies, i of index" [routerLink]="['/detalles', movie.id]"   src="{{'https://image.tmdb.org/t/p/w500/'+movie.poster_path}}" alt="acclaimedMovie">
+        </div>
+    </div>
+</div>

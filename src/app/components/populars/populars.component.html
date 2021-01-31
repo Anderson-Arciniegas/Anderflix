@@ -1,0 +1,33 @@
+<div class="carousel">
+    <h2 [ngStyle.xs]="{'font-size.px': 24}" *ngIf="!band">Películas populares</h2>
+    <h2 [ngStyle.xs]="{'font-size.px': 24}" *ngIf="band">Series populares</h2>
+    <div class="contentCarousel" fxLayout="row"  *ngIf="!band" >
+      
+        <svg [ngStyle.lg]="{'margin-top.%': 5}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="180px" height="180px" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path (click)="carousel('left','image')"  fill="#FFFFFF" d="M13.83 19a1 1 0 0 1-.78-.37l-4.83-6a1 1 0 0 1 0-1.27l5-6a1 1 0 0 1 1.54 1.28L10.29 12l4.32 5.36a1 1 0 0 1-.78 1.64z"/></svg>
+        <div fxLayout="row" fxLayoutAlign="center center">
+            <div class="content" [ngStyle.xs]="{'width.%': 95}" gdColumns="1fr 1fr 1fr 1fr" gdColumns.xs="120px 120px" gdRows="200px" gdRows.lg="350px"  gdRows.xs="180px 180px">
+            
+                <img [ngStyle.xs]="{'width.%': 90, 'margin-left.%': 5}"  *ngFor="let movie of popularsMovies, let i = index" class="{{classAsing(i)}}" [routerLink]="['/detalles', movie.id]" src="{{'https://image.tmdb.org/t/p/w500/'+movie.poster_path}}"  id="{{movie + i}}" alt="movieImg">
+            </div>
+        </div>
+       
+     
+        <svg [ngStyle.lg]="{'margin-top.%': 5}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="180px" height="180px" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path (click)="carousel('right','image')"  fill="#FFFFFF" d="M10 19a1 1 0 0 1-.64-.23a1 1 0 0 1-.13-1.41L13.71 12L9.39 6.63a1 1 0 0 1 .15-1.41a1 1 0 0 1 1.46.15l4.83 6a1 1 0 0 1 0 1.27l-5 6A1 1 0 0 1 10 19z"/></svg>
+    </div>
+    <div class="contentCarousel" fxLayout="row"  *ngIf="band" >
+      
+        <svg [ngStyle.lg]="{'margin-top.%': 5}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="180px" height="180px" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path (click)="carousel('left','serieImage')"  fill="#FFFFFF" d="M13.83 19a1 1 0 0 1-.78-.37l-4.83-6a1 1 0 0 1 0-1.27l5-6a1 1 0 0 1 1.54 1.28L10.29 12l4.32 5.36a1 1 0 0 1-.78 1.64z"/></svg>
+        <div fxLayout="row" fxLayoutAlign="center center">
+
+            <div class="content" [ngStyle.xs]="{'width.%': 95}" gdColumns="1fr 1fr 1fr 1fr" gdColumns.xs="120px 120px" gdRows="200px" gdRows.lg="350px" gdRows.xs="180px 180px" >
+            
+                <img [ngStyle.xs]="{'width.%': 90, 'margin-left.%': 5}"   *ngFor="let movie of popularsTv, let i = index" class="{{classAsing2(i)}}" src="{{'https://image.tmdb.org/t/p/w500/'+movie.poster_path}}"  id="{{serie + i}}" alt="movieImg">
+            </div>
+        </div>
+
+     
+        <svg [ngStyle.lg]="{'margin-top.%': 5}" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="180px" height="180px" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path (click)="carousel('right','serieImage')"  fill="#FFFFFF" d="M10 19a1 1 0 0 1-.64-.23a1 1 0 0 1-.13-1.41L13.71 12L9.39 6.63a1 1 0 0 1 .15-1.41a1 1 0 0 1 1.46.15l4.83 6a1 1 0 0 1 0 1.27l-5 6A1 1 0 0 1 10 19z"/></svg>
+    </div>
+
+    
+</div>

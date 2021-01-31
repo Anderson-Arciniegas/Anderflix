@@ -1,0 +1,30 @@
+.search-bar{
+
+    width: 95%;
+    margin: 10px;
+    margin-top:0;
+    margin-bottom: 30px;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    border-radius: 10px;
+    background: rgba($color: #ffff, $alpha: 0.6);
+    height: 35px;
+    ::placeholder{
+        color: white;
+    }
+    input{
+        border-radius: 10px;
+        height: 35px;
+        padding-left: 2%;
+        padding-right: 2%;
+        width: 96%;
+        background: 0;
+        border: 0;
+        font-size: 18px;
+        color: white;
+        background: none;
+        &:focus{
+            outline: none;
+        }
+    }
+}

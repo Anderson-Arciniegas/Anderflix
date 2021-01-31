@@ -1,0 +1,37 @@
+<div class="details">
+
+    <app-search-bar></app-search-bar>
+    <div class="content" *ngIf="movie">
+        <img class="backImage" src="{{'https://image.tmdb.org/t/p/w500/'+movie.backdrop_path}}" alt="">
+        <div [ngStyle.xs]="{'height.vh': 120}" class="back"></div>
+        <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between" [ngStyle.xs]="{'width.%': 100}"   class="text">
+            <div class="leftContent" >
+                <img [ngStyle.xs]="{'width.px': 200}" class="mainImage" src="{{'https://image.tmdb.org/t/p/w500/'+movie.poster_path}}" alt="">
+              
+                <div class="genres">
+                    <span *ngFor="let genre of movie.genres"> {{genre.name}} </span>
+                </div>
+            </div>
+
+            <div fxLayout="column" fxLayoutAlign="space-around" [ngStyle.xs]="{'margin-right.%': 10}"  class="rightContent">
+                <div class="contentTitle">
+                    <h2 [ngStyle.xs]="{'font-size.px': 30}">{{movie.title}}</h2>
+                    <h3 [ngStyle.xs]="{'font-size.px': 20}">{{movie.tagline}}</h3>
+                </div>
+                <div class="contentResume" [ngStyle.xs]="{'width.%': 100}"  >
+                    <p [ngStyle.xs]="{'font-size.px': 16}" >{{movie.overview}}</p>
+                    <div  fxLayout="row" fxLayoutAlign="space-between center" class="actions">
+                        <div class="addFav">
+                            <span (click)="datesMovie(movie)">Agregar a favoritas</span>
+                        </div>
+
+                        <button (click)="goBack()" >Regresar</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+   
+    </div>
+</div> 
+

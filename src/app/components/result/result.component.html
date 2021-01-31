@@ -1,0 +1,36 @@
+<div  class="results">
+    <app-search-bar></app-search-bar>
+    <div>
+        <h2 class="title">Resultados de la busqueda</h2>
+    </div>
+   
+    <div class="spinner" *ngIf="!band">
+        <mat-spinner [diameter]="200"></mat-spinner> 
+    </div>
+   
+    <div class="content" *ngIf="results != []" gdColumns="1fr 1fr 1fr" gdColumns.sm="1fr 1fr" gdColumns.xs="1fr" gdRows="470px!">
+        <div [ngStyle.lg]="{'margin-left.%': 16}" class="card" *ngFor="let result of finalResults">
+            <a href="" [routerLink]="['/detalles', result.id]">
+                <div class="image">
+                    <img src="{{'https://image.tmdb.org/t/p/w500/'+result.poster_path}}" alt="">
+                </div>
+                <div class="text">
+                    <h3 [ngStyle.xs]="{'font-size.px': 16}">{{result.title}}</h3>
+                    <div fxLayout="row" class="genres" >
+                        <span *ngFor="let genre of result.genre_ids"> {{genre}} </span>
+                    </div>
+                  
+                    <div fxLayout="row" class="votes" fxLayoutAlign="space-between"   class="votes">
+                        <span [ngStyle.xs]="{'font-size.px': 12}">Average: {{result.vote_average}}</span>
+                        <span [ngStyle.xs]="{'font-size.px': 12}">Votes: {{result.vote_count}}</span>
+                    </div>
+                    <h4>Summary</h4>
+                    <p [ngStyle.xs]="{'font-size.px': 12}">{{result.overview}}</p>
+                    
+            
+            
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

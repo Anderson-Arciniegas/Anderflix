@@ -1,0 +1,12 @@
+<div class="login"> 
+    <app-search-bar></app-search-bar>
+    <div [ngStyle.xs]="{'height.vh': 50}" class="morePopular" *ngIf="mainMovie">
+        <h2 [ngStyle.xs]="{'font-size.px': 24}">{{mainMovie.title}}</h2>
+        <h3 [ngStyle.xs]="{'font-size.px': 20}">Más popular</h3>
+        <img src="{{'https://image.tmdb.org/t/p/w500/'+mainMovie.poster_path}}" alt="">
+    </div>
+
+    <app-populars [popularsMovies]="movies" [band]="false"></app-populars>
+    <app-populars [band]="true"></app-populars>
+    <app-acclaimed></app-acclaimed>
+</div>

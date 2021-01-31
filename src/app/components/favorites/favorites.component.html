@@ -1,0 +1,15 @@
+<div class="favorites">   
+    <app-search-bar></app-search-bar>
+    <h2 [ngStyle.xs]="{'font-size.px': 24}" >Mis películas favoritas</h2>
+    <div class="content">
+        <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign=" center" [ngStyle.xs]="{'width.%': 75,'margin-bottom.px': 30,'margin-left.%':0}" class="movie" *ngFor="let movie of movies">
+            <img src="{{'https://image.tmdb.org/t/p/w500/'+movie.poster_path}}" alt="">
+            <div [ngStyle.xs]="{'width.%': 80}"   fxLayout="column" fxLayoutAlign=" center" class="text">
+                <h3 [ngStyle.xs]="{'font-size.px': 20,'width.%': 100,'margin-left.%':0}"  >{{movie.title}}</h3>
+                <span [ngStyle.xs]="{'margin-left.%':0}" class="date">{{movie.release_date}}</span>
+                <span [ngStyle.xs]="{'margin-left.%':0}" (click)="deleteMovie(movie.id)" class="delete">Eliminar de favoritas</span>
+            </div>
+        </div>
+    </div>
+
+</div>
